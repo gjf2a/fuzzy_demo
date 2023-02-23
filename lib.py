@@ -24,9 +24,9 @@ class SensorMotor:
         self.ev3 = ev3
         self.left = Motor(Port.A)
         self.right = Motor(Port.D)        
-        self.control = TouchSensor(Port.S1)
+        self.control = TouchSensor(Port.S3)
         self.left_sonar = pybricks.nxtdevices.UltrasonicSensor(Port.S2)
-        self.right_sonar = pybricks.nxtdevices.UltrasonicSensor(Port.S3)
+        self.right_sonar = pybricks.nxtdevices.UltrasonicSensor(Port.S1)
         self.front_sonar = UltrasonicSensor(Port.S4)
         self.loops = 0
 
@@ -34,7 +34,7 @@ class SensorMotor:
         return ["L:" + str(self.left_sonar.distance()), 
             "F:" + str(self.front_sonar.distance()), 
             "R:" + str(self.right_sonar.distance()),
-            "C:" + str(self.control.pressed()]
+            "C:" + str(self.control.pressed())]
 
     def show(self, action, condition):
         self.ev3.screen.clear()
